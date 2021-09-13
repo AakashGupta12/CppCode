@@ -1,0 +1,26 @@
+I am writing the details of the changes that I want in media.cpp. The reason is, so that more logic is put and we can see how objects interact with each other etc.
+
+Media class---------------------
+it will have title and price attributes
+it will have an array of BaseMedia objects, say baseMediaArr (of type BaseMedia)
+it will have a method addBaseMedia(BaseMedia) to add such objects in the array
+it will have a display() non virtual method to display all such basemedia object
+inside display(), it will first print title and price, then for each object in array (of type BaseMedia), it will call displayBaseMedia() for that object
+
+BaseMedia will be a virtual class---------
+it will have virtual method displayBaseMedia()
+Book and Tape both will be its subclasses and will be implementing displayBaseMedia()
+
+Book:BaseMedia---------
+displayBaseMedia () - it will print pages
+
+Tape:BaseMedia------------
+displayBaseMedia () - it will print time
+
+in the main()------------
+it will create a Media object, passing it title and price
+it will create Book object passing it just the page parameter and add it in media using addBaseMedia
+it will create Tape object passing it just the length parameter and add it in media using addBaseMedia
+
+then it will call display on media object, which in turn will be calling displayBaseMedia() for Book and Tape objects
+
